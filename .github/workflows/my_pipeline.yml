@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      name: Install depencences
-      run: npm install 
+      - name: Install depencences
+        run: npm install 
 
-      name: Run Cypress tests 
-      run: npm run e2e:full 
+      - name: Run Cypress tests 
+        run: npm run e2e:full 
 
-      name: Upload testing results
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: build/cypress
+      - name: Upload testing results
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/cypress
